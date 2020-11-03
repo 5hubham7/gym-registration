@@ -1,34 +1,37 @@
 <div class="m-3">
   <div class="form">
     <div class="form-row">
-      <div class="col-md-6 p-3">
+      <div class="col p-3 text-center">
         <h2 class="h2 text-danger" #status>You Don't Have Any Membership!</h2>
       </div>
     </div>
     <div class="form-row">
       <div class="col-md-4 p-3">
         <button
-          class="btn btn-block btn-success"
+          class="btn btn-block btn-success font-weight-bold text-uppercase"
           routerLink="/join"
           routerLinkActive="active"
         >
-          JOIN MEMBERSHIP
+          join membership
         </button>
       </div>
 
       <div class="col-md-4 p-3">
         <button
-          class="btn btn-block btn-warning"
+          class="btn btn-block btn-warning font-weight-bold text-uppercase"
           routerLink="/update"
           routerLinkActive="active"
         >
-          UPDATE MEMBERSHIP
+          update membership
         </button>
       </div>
 
       <div class="col-md-4 p-3">
-        <button class="btn btn-block btn-danger" (click)="delete()">
-          DELETE MEMBERSHIP
+        <button
+          class="btn btn-block btn-danger font-weight-bold text-uppercase"
+          (click)="delete()"
+        >
+          delete membership
         </button>
       </div>
     </div>
