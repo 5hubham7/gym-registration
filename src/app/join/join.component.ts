@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-join',
@@ -6,10 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./join.component.css'],
 })
 export class JoinComponent implements OnInit {
-  constructor() {}
+  constructor(public authService: AuthService) {}
 
-  ngOnInit(): void {}
-  submit() {
-    alert('succefull login');
+  ngOnInit(): void {
+    this.authService.checkLogin();
   }
 }

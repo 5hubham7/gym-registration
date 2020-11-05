@@ -1,6 +1,16 @@
 <div class="m-3">
   <div class="form">
-    <div class="form-row">
+    <div class="form-row float-right">
+      <div class="col-md">
+        <button
+          class="btn btn-block btn-outline-danger text-uppercase"
+          (click)="logoutScript()"
+        >
+          logout
+        </button>
+      </div>
+    </div>
+    <div class="form-row py-5">
       <div class="col p-3 text-center">
         <h2 class="h2 text-danger" #status>You Don't Have Any Membership!</h2>
       </div>

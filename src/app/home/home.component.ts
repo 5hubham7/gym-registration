@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Form } from '@angular/forms';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +8,17 @@ import { Form } from '@angular/forms';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
+  constructor(public authService: AuthService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.authService.checkLogin();
+  }
 
   delete() {
     alert('Membership Deleted Successfully!');
+  }
+
+  logoutScript() {
+    this.authService.logout();
   }
 }
