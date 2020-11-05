@@ -15,7 +15,7 @@ export class AuthService {
 
   checkLogin() {
     let currentUser = this.firebaseAuth.currentUser;
-    if (currentUser != null) {
+    if (currentUser == null) {
       alert('Login first!');
       this.router.navigateByUrl('/login');
     }
