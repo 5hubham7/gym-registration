@@ -1,235 +1,105 @@
-<div>
+<div class="my-5">
   <form class="form">
-    <div class="form-row">
+    <div class="form-row my-2">
       <div class="col-md-4">
-        <label for="First Name" style="margin-top: 5%"> First Name </label>
-        <input
-          class="form-control"
-          type="text"
-          name="Fname"
-          id="fname"
-          ngModel
-          #Fname
-          required
-        />
+        <label class="text-white" for="firstName">First Name</label>
+        <input class="form-control" type="text" id="firtFname" #fname required />
       </div>
       <div class="col-md-4">
-        <label for="Last Name" style="margin-top: 5%"> Middle Name </label>
-        <input
-          class="form-control"
-          type="text"
-          name="Mname"
-          id="mname"
-          ngModel
-          #lname
-          required
-        />
+        <label class="text-white" for="middleName">Middle Name</label>
+        <input class="form-control" type="text" id="middleName" #lname required />
       </div>
 
       <div class="col-md-4">
-        <label for="Last Name" style="margin-top: 5%"> Last Name </label>
-        <input
-          class="form-control"
-          type="text"
-          name="Lname"
-          id="lname"
-          ngModel
-          #lname
-          required
-        />
+        <label class="text-white" for="Last Name">Last Name</label>
+        <input class="form-control" type="text" name="Lname" id="lname" #lname required />
       </div>
     </div>
 
-    <div class="form-row">
+    <div class="form-row my-2">
       <div class="col-md-4">
-        <label for="Age" style="margin-top: 5%"> Age </label>
-        <input
-          class="form-control"
-          type="Number"
-          name="age"
-          id="age"
-          ngModel
-          #age
-          required
-        />
+        <label class="text-white" for="Age"> Age </label>
+        <input class="form-control" type="number" id="age" #age required />
       </div>
 
       <div class="col-md-4">
-        <label for="MobileNo " style="margin-top: 5%"> Mobile Number </label>
-        <input
-          class="form-control"
-          type="PhoneNo"
-          name="PhoneNo"
-          id="phone"
-          ngModel
-          #phone
-          required
-        />
+        <label class="text-white" for="phone">Mobile Number</label>
+        <input class="form-control" type="tel" id="phone" #phone required />
       </div>
 
       <div class="col-md-4">
-        <label for=" address" style="margin-top: 5%"> Address </label>
-        <input
-          class="form-control"
-          type="Textarea"
-          name="Address"
-          id="address"
-          ngModel
-          #address
-          required
-        />
+        <label class="text-white" for="address"> Address </label>
+        <input class="form-control" type="text" id="address" #address required />
       </div>
     </div>
 
-    <div class="form-row">
+    <div class="form-row my-2">
       <div class="col-md-4">
-        <label for="Gender" style="margin-top: 5%"> Gender </label>
+        <label class="text-white" for="gender"> Gender </label>
         <div class="form-row" id="Gender">
           <div class="form-group form-check-inline col-5">
-            <label for="Male" class="form-check-label form-control">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="Gender"
-                id="genderMale"
-                value="Male"
-                ngModel
-                #Male
-                required
-              />
+            <label class="text-white" for="Male" class="form-check-label form-control">
+              <input class="form-check-input" type="radio" name="gender" id="male" value="Male" #gender required />
               Male
             </label>
           </div>
-
           <div class="form-group form-check-inline col-5">
-            <label for="Female" class="form-check-label form-control">
-              <input
-                type="radio"
-                class="form-check-input"
-                name="Gender"
-                id="genderFemale"
-                value="Female"
-                ngModel
-                #Female
-                required
-              />
+            <label class="text-white" for="female" class="form-check-label form-control">
+              <input type="radio" class="form-check-input" name="gender" id="female" value="Female" #gender required />
               Female
             </label>
           </div>
         </div>
       </div>
       <div class="col-md-4">
-        <label for="Height" style="margin-top: 5%"> Height (cm) </label>
-        <input
-          class="form-control"
-          type="Number"
-          name="height"
-          id="height"
-          ngModel
-          #height
-          required
-        />
+        <label class="text-white" for="height"> Height (cm) </label>
+        <input class="form-control" type="Number" id="height" #height required />
       </div>
 
       <div class="col-md-4">
-        <label for="Weight" style="margin-top: 5%"> Weight (kg) </label>
-        <input
-          class="form-control"
-          type="Number"
-          name="Weight"
-          id="weight"
-          ngModel
-          #weight
-          required
-        />
+        <label class="text-white" for="weight"> Weight (kg) </label>
+        <input class="form-control" type="number" id="weight" #weight required />
       </div>
     </div>
 
-    <div class="form-row">
-      <div class="col-md-3">
-        <label for="DateOfJoining" style="margin-top: 5%">
-          Date Of Joining</label
-        >
-        <input
-          class="form-control"
-          type="Date"
-          name="Date"
-          id="date"
-          ngModel
-          #date
-          required
-        />
+    <div class="form-row my-2">
+      <div class="col-md-4">
+        <label class="text-white " for="date">Date Of Joining</label>
+        <input class="form-control" type="date" id="date" #date required />
       </div>
-      <label for="Fess" style="margin-top: 3%">
-        Application Fees(Offers)
-      </label>
-      <div id="Fees">
-        <div class="form-group form-check-inline col-md-3">
-          <label for="Month1" class="form-check-label form-control">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="Fees"
-              id="Fees1"
-              value="Month1"
-              ngModel
-              #Fees1
-              required
-            />
-            1 Month 400Rs
-          </label>
-        </div>
-
-        <div class="form-group form-check-inline col-md-3">
-          <label for="Month6" class="form-check-label form-control">
-            <input
-              type="radio"
-              class="form-check-input"
-              name="Fees"
-              id="Fees6"
-              value="Month6"
-              ngModel
-              #Fees6
-              required
-            />
-            6 Months 2000Rs
-          </label>
-        </div>
-        <div class="form-group form-check-inline col-md-3">
-          <label for="Month12" class="form-check-label form-control">
-            <input
-              type="radio"
-              class="form-check-input"
-              name="Fees"
-              id="Fees12"
-              value="Month12"
-              ngModel
-              #Fees12
-              required
-            />
-            12 Months 3000Rs
-          </label>
+      <div class="col-md-8">
+        <label class="text-white" for="fees"> Fees </label>
+        <div class="row pl-4" id="fees">
+          <div class="form-group form-check-inline col-3">
+            <label class="text-white" for="months1" class="form-check-label form-control">
+              <input class="form-check-input" type="radio" name="fees" id="months1" value="1 Month" #months1 required />
+              1 Month 400Rs
+            </label>
+          </div>
+          <div class="form-group form-check-inline col-4">
+            <label class="text-white" for="months6" class="form-check-label form-control">
+              <input type="radio" class="form-check-input" name="fees" id="months6" value="6 Month" #months6 required />
+              6 Months 2000Rs
+            </label>
+          </div>
+          <div class="form-group form-check-inline col-4">
+            <label class="text-white" for="months12" class="form-check-label form-control">
+              <input type="radio" class="form-check-input" name="fees" id="months12" value="12 Month" #months12
+                required />
+              12 Months 3000Rs
+            </label>
+          </div>
         </div>
       </div>
     </div>
-    <div class="form-row">
+    <div class="form-row my-2">
       <div class="col-md-6">
-        <button
-          class="btn btn-success form-control"
-          type="Submit"
-          id="Submit"
-          style="margin-top: 10%"
-        >
+        <button class="btn btn-success form-control" type="Submit" id="Submit">
           JOIN
         </button>
       </div>
       <div class="col-md-6">
-        <button
-          type="reset"
-          class="btn btn-primary form-control"
-          id="Reset"
-          style="margin-top: 10%"
-        >
+        <button type="reset" class="btn btn-primary form-control" id="Reset">
           RESET
         </button>
       </div>
@@ -243,12 +113,12 @@
     <h1>    Login form  </h1>
     <form class="form" (ngSubmit)="onSubmit(f)" #f="ngForm"> 
   <div class="form-row col-lg-6" style="margin-top:5%;">
-  <label for="email" >Email</label>
-  <input class="form-control"  type="text" name="email" id="email" ngModel #email required/>
+  <label class="text-white" for="email" >Email</label>
+  <input class="form-control"  type="text" name="email" id="email"  #email required/>
 </div>
 <div class="form-row col-lg-6" style="margin-top:5%;">
- <label for="password">Password</label>
- <input class="form-control"   type="password" name="password" id="password" ngModel #password required />
+ <label class="text-white" for="password">Password</label>
+ <input class="form-control"   type="password" name="password" id="password"  #password required />
 </div>
 <div class="form-row col-lg-6" style="margin-top:5%;">
     <button class="btn btn-primary form-control" type="Submit">Submit</button>
