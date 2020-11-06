@@ -2,45 +2,33 @@
   <div class="form">
     <div class="form-row float-right">
       <div class="col-md">
-        <button
-          class="btn btn-block btn-outline-danger text-uppercase"
-          (click)="logoutScript()"
-        >
+        <button class="btn btn-block btn-outline-danger text-uppercase" (click)="logoutScript()">
           logout
         </button>
       </div>
     </div>
     <div class="form-row py-5">
       <div class="col p-3 text-center">
-        <h2 class="h2 text-danger" #status>You Don't Have Any Membership!</h2>
+        <h2 class="h2 text-danger" #status> {{membershipStatus}} </h2>
       </div>
     </div>
     <div class="form-row">
       <div class="col-md-4 p-3">
-        <button
-          class="btn btn-block btn-success font-weight-bold text-uppercase"
-          routerLink="/join"
-          routerLinkActive="active"
-        >
+        <button class="btn btn-block btn-success font-weight-bold text-uppercase" routerLink="/join"
+          routerLinkActive="active">
           join membership
         </button>
       </div>
 
       <div class="col-md-4 p-3">
-        <button
-          class="btn btn-block btn-warning font-weight-bold text-uppercase"
-          routerLink="/update"
-          routerLinkActive="active"
-        >
+        <button class="btn btn-block btn-warning font-weight-bold text-uppercase" routerLink="/update"
+          routerLinkActive="active">
           update membership
         </button>
       </div>
 
       <div class="col-md-4 p-3">
-        <button
-          class="btn btn-block btn-danger font-weight-bold text-uppercase"
-          (click)="delete()"
-        >
+        <button class="btn btn-block btn-danger font-weight-bold text-uppercase" (click)="delete()">
           delete membership
         </button>
       </div>

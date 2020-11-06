@@ -1,92 +1,96 @@
 <div class="my-5">
-  <form class="form">
+  <div class="form">
     <div class="form-row my-2">
       <div class="col-md-4">
-        <label class="text-white" for="firstName">First Name</label>
+        <label class="text-white text-uppercase" for="firstName">First Name</label>
         <input class="form-control" type="text" id="firtFname" #fname required />
       </div>
       <div class="col-md-4">
-        <label class="text-white" for="middleName">Middle Name</label>
-        <input class="form-control" type="text" id="middleName" #lname required />
+        <label class="text-white text-uppercase" for="middleName">Middle Name</label>
+        <input class="form-control" type="text" id="middleName" #mname required />
       </div>
 
       <div class="col-md-4">
-        <label class="text-white" for="Last Name">Last Name</label>
+        <label class="text-white text-uppercase" for="Last Name">Last Name</label>
         <input class="form-control" type="text" name="Lname" id="lname" #lname required />
       </div>
     </div>
 
     <div class="form-row my-2">
       <div class="col-md-4">
-        <label class="text-white" for="Age"> Age </label>
+        <label class="text-white text-uppercase" for="Age"> Age </label>
         <input class="form-control" type="number" id="age" #age required />
       </div>
 
       <div class="col-md-4">
-        <label class="text-white" for="phone">Mobile Number</label>
+        <label class="text-white text-uppercase" for="phone">Mobile Number</label>
         <input class="form-control" type="tel" id="phone" #phone required />
       </div>
 
       <div class="col-md-4">
-        <label class="text-white" for="address"> Address </label>
+        <label class="text-white text-uppercase" for="address"> Address </label>
         <input class="form-control" type="text" id="address" #address required />
       </div>
     </div>
 
     <div class="form-row my-2">
       <div class="col-md-4">
-        <label class="text-white" for="gender"> Gender </label>
+        <label class="text-white text-uppercase" for="gender"> Gender </label>
         <div class="form-row" id="Gender">
           <div class="form-group form-check-inline col-5">
-            <label class="text-white" for="Male" class="form-check-label form-control">
-              <input class="form-check-input" type="radio" name="gender" id="male" value="Male" #gender required />
+            <label class="text-white text-uppercase" for="Male" class="form-check-label form-control">
+              <input class="form-check-input" type="radio" name="gender" id="male" value="Male" #male required
+                (click)="setGender(male.value)" />
               Male
             </label>
           </div>
           <div class="form-group form-check-inline col-5">
-            <label class="text-white" for="female" class="form-check-label form-control">
-              <input type="radio" class="form-check-input" name="gender" id="female" value="Female" #gender required />
+            <label class="text-white text-uppercase" for="female" class="form-check-label form-control">
+              <input type="radio" class="form-check-input" name="gender" id="female" value="Female" #female required
+                (click)="setGender(female.value)" />
               Female
             </label>
           </div>
         </div>
       </div>
       <div class="col-md-4">
-        <label class="text-white" for="height"> Height (cm) </label>
+        <label class="text-white text-uppercase" for="height"> Height (cm) </label>
         <input class="form-control" type="Number" id="height" #height required />
       </div>
 
       <div class="col-md-4">
-        <label class="text-white" for="weight"> Weight (kg) </label>
+        <label class="text-white text-uppercase" for="weight"> Weight (kg) </label>
         <input class="form-control" type="number" id="weight" #weight required />
       </div>
     </div>
 
     <div class="form-row my-2">
       <div class="col-md-4">
-        <label class="text-white " for="date">Date Of Joining</label>
+        <label class="text-white  text-uppercase" for="date">Date Of Joining</label>
         <input class="form-control" type="date" id="date" #date required />
       </div>
       <div class="col-md-8">
-        <label class="text-white" for="fees"> Fees </label>
+        <label class="text-white text-uppercase" for="fees"> Fees </label>
         <div class="row pl-4" id="fees">
           <div class="form-group form-check-inline col-3">
-            <label class="text-white" for="months1" class="form-check-label form-control">
-              <input class="form-check-input" type="radio" name="fees" id="months1" value="1 Month" #months1 required />
-              1 Month 400Rs
+            <label class="text-white text-uppercase" for="months1" class="form-check-label form-control">
+              <input class="form-check-input" type="radio" name="fees" id="months1" value="1 Month" required
+                (click)="setFees('1 Month. 400/-')" />
+              1 Month. 400/-
             </label>
           </div>
           <div class="form-group form-check-inline col-4">
-            <label class="text-white" for="months6" class="form-check-label form-control">
-              <input type="radio" class="form-check-input" name="fees" id="months6" value="6 Month" #months6 required />
-              6 Months 2000Rs
+            <label class="text-white text-uppercase" for="months6" class="form-check-label form-control">
+              <input type="radio" class="form-check-input" name="fees" id="months6" value="6 Month" required
+                (click)="setFees('6 Months. 2000/-')" />
+              6 Months. 2000/-
             </label>
           </div>
           <div class="form-group form-check-inline col-4">
-            <label class="text-white" for="months12" class="form-check-label form-control">
-              <input type="radio" class="form-check-input" name="fees" id="months12" value="12 Month" #months12
-                required />
-              12 Months 3000Rs
+            <label class="text-white text-uppercase" for="months12" class="form-check-label form-control">
+              <input type="radio" class="form-check-input" name="fees" id="months12" value="12 Month" required
+                (click)="setFees('12 Months. 3000/-')" />
+              12 Months. 3000/-
             </label>
           </div>
         </div>
@@ -94,36 +98,16 @@
     </div>
     <div class="form-row my-2">
       <div class="col-md-6">
-        <button class="btn btn-success form-control" type="Submit" id="Submit">
-          JOIN
+        <button class="btn btn-success btn-block text-uppercase font-weight-bold"
+          (click)="join(fname.value, mname.value, lname.value, age.value, phone.value, address.value, height.value, weight.value, date.value)">
+          join
         </button>
       </div>
       <div class="col-md-6">
-        <button type="reset" class="btn btn-primary form-control" id="Reset">
-          RESET
+        <button type="reset" class="btn btn-primary btn-block text-uppercase font-weight-bold">
+          reset
         </button>
       </div>
     </div>
-  </form>
+  </div>
 </div>
-
-<!--
-<div class="container" style="margin-top:5%;">
-<div class="container">
-    <h1>    Login form  </h1>
-    <form class="form" (ngSubmit)="onSubmit(f)" #f="ngForm"> 
-  <div class="form-row col-lg-6" style="margin-top:5%;">
-  <label class="text-white" for="email" >Email</label>
-  <input class="form-control"  type="text" name="email" id="email"  #email required/>
-</div>
-<div class="form-row col-lg-6" style="margin-top:5%;">
- <label class="text-white" for="password">Password</label>
- <input class="form-control"   type="password" name="password" id="password"  #password required />
-</div>
-<div class="form-row col-lg-6" style="margin-top:5%;">
-    <button class="btn btn-primary form-control" type="Submit">Submit</button>
-</div>
-</form>
-</div>
-</div>
--->
