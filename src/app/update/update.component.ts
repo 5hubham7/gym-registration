@@ -12,7 +12,7 @@ export class UpdateComponent implements OnInit {
   constructor(public authService: AuthService) {}
 
   ngOnInit(): void {
-    this.authService.checkLogin();
+    // this.authService.checkLogin();
   }
 
   setFees(fees: string) {

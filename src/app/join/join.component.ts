@@ -10,7 +10,7 @@ export class JoinComponent implements OnInit {
   constructor(public authService: AuthService) {}
 
   ngOnInit(): void {
-    this.authService.checkLogin();
+    // this.authService.checkLogin();
   }
 
   gender: string = '';

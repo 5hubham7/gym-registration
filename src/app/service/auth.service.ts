@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Observable, Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -22,27 +21,28 @@ export class AuthService {
     });
   }
 
-  get isAuthenticated(): boolean {
-    return this.authState !== null;
-  }
-
-  get currentUserId(): string {
-    return this.isAuthenticated ? this.authState.uid : null;
+  get currentUserID() {
+    try {
+      return this.authState.uid;
+    } catch (error) {}
   }
 
   checkLogin() {
-    if (this.currentUserId == null) {
-      // alert('Login first!');
-      // this.router.navigateByUrl('/login');
+    console.log(this.currentUserID);
+    if (this.currentUserID == undefined || this.currentUserID == null) {
+      alert('Login first!');
+      this.router.navigate(['login']);
     }
   }
 
   signup(email: string, password: string) {
+    let tempObject: Object = {
+      Email: email,
+    };
     this.firebaseAuth
       .createUserWithEmailAndPassword(email, password)
       .then((value) => {
-        alert('Signup successful!' + value);
-        // this.router.navigateByUrl('/home');
+        alert('Signup successful!');
         this.router.navigate(['home']);
       })
       .catch((err) => {
@@ -83,6 +83,7 @@ export class AuthService {
 
   logout() {
     this.firebaseAuth.signOut();
+    console.log(this.currentUserID);
     alert('Logged Out!');
     // this.router.navigateByUrl('/login');
     this.router.navigate(['login']);
@@ -91,10 +92,10 @@ export class AuthService {
   insert(userData) {
     let user = this.firebaseAuth.currentUser;
     if (user != null) {
-      console.log(this.currentUserId);
+      console.log(this.currentUserID);
       this.firestore
         .collection('users')
-        .doc(this.currentUserId)
+        .doc(this.currentUserID)
         .set(userData)
         .then(
           (res) => {
@@ -112,10 +113,10 @@ export class AuthService {
   update(userData) {
     let user = this.firebaseAuth.currentUser;
     if (user != null) {
-      console.log(this.currentUserId);
+      console.log(this.currentUserID);
       this.firestore
         .collection('users')
-        .doc(this.currentUserId)
+        .doc(this.currentUserID)
         .update(userData)
         .then(
           (res) => {
@@ -125,18 +126,50 @@ export class AuthService {
 
             console.log(res);
           },
-          (err) => console.log(err)
+          (err) => {
+            if (err) {
+              alert('First join the membership');
+              this.router.navigate(['home']);
+            }
+          }
         );
     }
   }
 
-  getMembership() {
-    console.log(this.currentUserId);
-    let docRef = this.firestore
-      .collection('users')
-      .doc(this.currentUserId)
-      .get();
+  membership: any;
 
-    console.log();
+  getMembership() {
+    console.log(this.currentUserID);
+    // let docRef = this.firestore.collection('users').get();
+    // docRef.subscribe((ss) => {
+    //   ss.docs.forEach((doc) => {
+    //     console.log(doc.data());
+    //   });
+    // });
+    try {
+      this.firestore
+        .collection('users')
+        .doc(this.currentUserID)
+        .ref.get()
+        .then((doc) => {
+          if (doc.exists) {
+            this.membership = doc.data().Fees;
+          } else {
+            this.membership = "You don't have any membership";
+          }
+        });
+      return this.membership;
+    } catch (error) {}
+  }
+
+  deleteMembership() {
+    console.log(this.currentUserID);
+    this.firestore
+      .collection('users')
+      .doc(this.currentUserID)
+      .delete()
+      .then(() => {
+        alert('Membership deleted successfully!');
+      });
   }
 }

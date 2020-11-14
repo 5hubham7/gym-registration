@@ -8,18 +8,27 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  membershipStatus: string = "You Don't Have Any Membership!";
+  membershipStatus: any;
   constructor(public authService: AuthService) {}
 
   ngOnInit(): void {
-    this.authService.checkLogin();
-    console.log('UID' + this.authService.currentUserId);
-    console.log('UID' + this.authService.isAuthenticated);
+    // this.authService.checkLogin();
     this.authService.getMembership();
   }
 
   delete() {
-    alert('Membership Deleted Successfully!');
+    this.authService.deleteMembership();
+    this.authService.getMembership();
+  }
+
+  displayMembership() {
+    let membershipStatus = this.authService.getMembership();
+    console.log(membershipStatus);
+    if (membershipStatus == undefined) {
+      this.membershipStatus = "You don't have any membership";
+    } else {
+      this.membershipStatus = membershipStatus;
+    }
   }
 
   logoutScript() {

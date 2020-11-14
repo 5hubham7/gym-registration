@@ -15,8 +15,4 @@ export class LoginComponent implements OnInit {
   loginScript(email: string, password: string) {
     this.authService.signup(email, password);
   }
-
-  logout() {
-    this.authService.logout();
-  }
 }
